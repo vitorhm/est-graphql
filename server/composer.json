@@ -1,5 +1,11 @@
 {
     "require": {
         "webonyx/graphql-php": "^15.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Estudo\\": "public/"
+        }
     }
+    
 }
