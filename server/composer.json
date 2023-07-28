@@ -1,6 +1,7 @@
 {
     "require": {
-        "webonyx/graphql-php": "^15.5"
+        "webonyx/graphql-php": "^15.5",
+        "ext-mysqli": "*"
     },
     "autoload": {
         "psr-4": {

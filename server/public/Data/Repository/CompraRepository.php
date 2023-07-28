@@ -26,6 +26,23 @@ class CompraRepository {
         
     }
 
-}
+    public function getByCliente(Cliente $cliente): array {
 
-?>
+        $connection = ConnectionFactory::createTesteConnection();
+        $connection->open();
+
+        try {
+            $result = $connection->query("SELECT * FROM compra WHERE id_cliente = $cliente->id");
+            $ar = array();
+            while ($row = $result->fetch_array()) {
+                $compra = new Compra(null, $row['valor'], $row['data'], $cliente);
+                $ar[$row['id']] = $compra;
+            }
+
+            return $ar;
+        } finally {
+            $connection->close();
+        }
+    }
+
+}

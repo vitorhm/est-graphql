@@ -29,12 +29,12 @@ class DataInit {
         $compra_repository = new CompraRepository();
         $produto_repository = new ProdutoRepository();
 
-        $cliente = new Cliente("Lorrant", "lorrantavante@gmail.com");
-        $compra = new Compra(20000, '2023-07-23', $cliente);
-        $prod1 = new Produto("Pandeiro", $compra);
-        $prod2 = new Produto("Monitor Curvo", $compra);
-        $prod3 = new Produto("Xbox", $compra);
-        $prod4 = new Produto("Calça Jeans", $compra);
+        $cliente = new Cliente(null, "Lorrant", "lorrantavante@gmail.com");
+        $compra = new Compra(null, 20000, '2023-07-23', $cliente);
+        $prod1 = new Produto(null, "Pandeiro", $compra);
+        $prod2 = new Produto(null, "Monitor Curvo", $compra);
+        $prod3 = new Produto(null, "Xbox", $compra);
+        $prod4 = new Produto(null, "Calça Jeans", $compra);
 
         $cliente_repository->add($cliente);
         $compra_repository->add($compra);

@@ -10,8 +10,9 @@ class Produto {
 
     public Compra $compra;
 
-    public function __construct(string $nome, Compra $compra)
+    public function __construct(?int $id, string $nome, Compra $compra)
     {
+        $this->id = $id;
         $this->nome = $nome;
         $this->compra = $compra;
     }

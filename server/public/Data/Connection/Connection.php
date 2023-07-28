@@ -20,11 +20,11 @@ class Connection {
         $this->database = $database;
     }
 
-    public function open() {
+    public function open(): void {
         $this->con = new mysqli($this->host, $this->user, $this->password, $this->database);
     }
 
-    public function close() {
+    public function close(): void {
         $this->con->close();
     }
 
@@ -37,10 +37,9 @@ class Connection {
         return new Statement($stmt);
     }
 
-    public function query(string $query) {
-        $this->con->query($query);
+    public function query(string $query): Result {
+        $result = $this->con->query($query);
+        return new Result($result);
     }
 
 }
-
-?>

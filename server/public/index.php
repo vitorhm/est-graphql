@@ -16,7 +16,7 @@ DataInit::init();
 
     // try {
     //     $query_type = new ObjectType([
-    //         'name' => 'Query',
+    //         'name' => 'Type',
     //         'fields' => [
     //             'echo' => [
     //                 'type' => Type::string(),

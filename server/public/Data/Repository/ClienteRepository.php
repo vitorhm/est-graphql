@@ -25,6 +25,21 @@ class ClienteRepository {
         
     }
 
+    public function get(int $id): Cliente {
+
+        $connection = ConnectionFactory::createTesteConnection();
+        $connection->open();
+
+        try {
+            $result = $connection->query("SELECT * FROM clientes WHERE id = $id");
+            $cl = $result->fetch_array();
+
+            return new Cliente($cl['id'], $cl['nome'], $cl['email']);
+        } finally {
+            $connection->close();
+        }
+    }
+
 }
 
 ?>

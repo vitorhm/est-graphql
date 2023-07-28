@@ -12,12 +12,14 @@ class Compra {
 
     public Cliente $cliente;
 
-    public function __construct(float $valor, string $data, Cliente $cliente)
+    public function __construct(?int $id, float $valor, string $data, Cliente $cliente)
     {
+        $this->id = $id;
         $this->valor = $valor;
         $this->data = $data;
         $this->cliente = $cliente;
     }
+
 
 }
 
